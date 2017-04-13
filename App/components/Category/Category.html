@@ -1,0 +1,18 @@
+﻿<table class="table table-bordered">
+    <tr class="well">
+        <td></td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td class="tdLeft">
+            <div>
+                <ul>
+                    <li ng-repeat="category in forumCategory.categories | orderBy: name">
+                        <a href="#/forum/{{category.name}}"> {{category.name}} </a>
+                    </li>
+                </ul>
+            </div>
+        </td>
+    </tr>
+</table>

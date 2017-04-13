@@ -1,0 +1,91 @@
+﻿<div class="blended_grid">
+    <div class="pageLeftMenu">
+        <table class="table table-bordered">
+            <tr class="well">
+                <td class="tdLeft">
+                    Category
+                </td>
+            </tr>
+            <tr>
+                <td class="tdLeft">
+                    <ul>
+                        <li ng-repeat="category in forumCategory | orderBy: Category">
+                            <a href="#/forum/{{category.CategoryID}}"> {{category.Category}} </a>
+                        </li>
+                        <li><a href="#/forum">Show All</a></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdRight">
+                    <a href="#/AddCategory" class="btn btn-primary btn-xs"><b>Add new category</b></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="pageContent">
+        <table class="table table-bordered">            
+            <tr class="well">
+                <td class="tdLeft" width="50%">
+                    Search: <input ng-model="search">
+                </td>
+                <td class="tdLeft" width="50%">
+                    Sort by: <select ng-model="sorting">
+                                 <option value="">-Select-</option>
+                                 <option value="ForumDate">Date</option>
+                                 <option selected="selected" value="Subject">Title</option>
+                    </select>
+                </td>
+            </tr>
+            <tr ng-repeat="post in posts | pagination: curPage * pageSize | limitTo: pageSize | filter:search | orderBy: sorting">
+                <td class="tdLeft" colspan="2">
+                    <div class="info-div">
+                        <h3 class="indent">
+                            <a href="#/post/{{post.ForumID}}"><b>{{post.Subject}}</b></a>
+                        </h3>
+                        <h5 class="text-grey indent">by {{post.PostedBy}}</h5>
+                        <p class="indent">
+                            {{post.Description}}
+                        </p>
+                        <p class="text-brown indent">
+                            <span class="glyphicon glyphicon-calendar"></span> <label ng-bind="formatDate(post.ForumDate) | date:'MM/dd/yyyy'"></label>
+                        </p>
+                    </div>
+
+                </td>
+            </tr>
+            <tr>
+                <td class="tdRight" colspan="2">
+                    <a href="#/post" class="btn btn-primary btn-xs"><b>+ Post Now</b></a>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdLeft" colspan="2">
+
+                    <div ng-show="posts.length">
+                        <ul class="pagination">
+                            <li>
+                                <button type="button" class="btn btn-primary" ng-disabled="curPage == 0"
+                                        ng-click="curPage=curPage-1">
+                                    &lt; PREV
+                                </button>
+                            </li>
+                            <li>
+                                <span>Page {{curPage + 1}} of {{ numberOfPages() }}</span>
+                            </li>
+                            <li>
+                                <button type="button" class="btn btn-primary"
+                                        ng-disabled="curPage >= posts.length/pageSize - 1"
+                                        ng-click="curPage = curPage+1">
+                                    NEXT &gt;
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+

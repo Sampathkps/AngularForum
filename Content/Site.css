@@ -1,0 +1,114 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+.table td.tdRight {
+  text-align: right;
+}
+.table td.tdCenter {
+  text-align: center;
+}
+.table-nonfluid {
+   width: auto;
+}
+.table td.tdLeft {
+  text-align: left;
+}
+img {
+  max-width: 10vw;
+}
+
+li {
+  list-style: none;
+  list-style-type: none;
+}
+.indent {
+  margin-left: 5%;
+}
+
+.text-grey {
+  color: #bfbabe;
+}
+.text-brown {
+  color: #a63e14;
+}
+.pagination li{
+    display: inline;
+}
+.pagination-controle button{
+    font-size: 12px;
+    margin-top: -26px;
+    cursor:pointer;
+    
+}
+.pagination{
+    margin:5px 12px !important;
+}
+.pagination li span{
+    float:none;
+}
+
+/*menu*/
+.flex-list {
+    position: relative;
+    margin: 1em;
+    overflow: hidden;
+}
+.flex-list ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: -1px;
+}
+.flex-list li {
+    flex-grow: 1;
+    flex-basis: auto;
+    margin: .25em 0;
+    padding: 0 1em;
+    text-align: center;
+    border-left: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.blended_grid{
+display : block;
+width : 100%;
+overflow : auto;
+margin : 30px auto 0 auto;
+}
+.pageLeftMenu{
+float : left;
+clear : none;
+height : auto;
+width : 18%;
+}
+.pageContent{
+float : left;
+clear : none;
+height : auto;
+width : 82%;
+padding-left:1%;
+}
